@@ -25,16 +25,16 @@ for i=1:length(ind_prof)-1
         end
     end
 end
-%% add mean Corr and mean Amp field to AQDprofile
-meanAmp=@(x) (nanmean(x.Burst_Amplitude_Beam,2));
-meanCorr=@(x) (nanmean(x.Burst_Correlation_Beam,2));
-           
-
-Corr=cellfun(meanCorr,AQDprofiles,'un',0);
-Amp =cellfun(meanAmp ,AQDprofiles,'un',0);
-for i=1:length(AQDprofiles)
-    AQDprofiles{i}.Burst_Corr=Corr{i};
-    AQDprofiles{i}.Burst_Amp =Amp{i};
-end
+% %% add mean Corr and mean Amp field to AQDprofile
+% meanAmp=@(x) (nanmean(x.Burst_Amplitude_Beam,2));
+% meanCorr=@(x) (nanmean(x.Burst_Correlation_Beam,2));
+%            
+% 
+% Corr=cellfun(meanCorr,AQDprofiles,'un',0);
+% Amp =cellfun(meanAmp ,AQDprofiles,'un',0);
+% for i=1:length(AQDprofiles)
+%     AQDprofiles{i}.Burst_Corr=Corr{i};
+%     AQDprofiles{i}.Burst_Amp =Amp{i};
+% end
 save([WWmeta.aqdpath 'Profiles_' WWmeta.name_aqd],'AQDprofiles')
 

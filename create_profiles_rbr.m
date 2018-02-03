@@ -1,7 +1,7 @@
 function create_profiles_rbr(WWmeta)
 
 
-load([WWmeta.rbrpath WWmeta.name_rbr])
+load(fullfile(WWmeta.rbrpath,WWmeta.name_rbr))
 eval(['[up,down,dataup] = get_upcast_rbr(' WWmeta.name_rbr ');'])
 
 dup=diff(up);
@@ -36,7 +36,7 @@ for i=1:length(RBRprofiles)
         RBRprofiles{i}.n2=RBRprofiles{i}.T*nan;
     end
 end
-save([WWmeta.rbrpath 'Profiles_' WWmeta.name_rbr],'RBRprofiles')
+save(fullfile(WWmeta.rbrpath,['Profiles_' WWmeta.name_rbr]),'RBRprofiles')
 
 
 

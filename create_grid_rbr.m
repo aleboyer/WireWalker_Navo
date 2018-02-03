@@ -1,6 +1,6 @@
 function create_grid_rbr(WWmeta,dz)
 
-load([WWmeta.rbrpath 'Profiles_' WWmeta.name_rbr],'RBRprofiles')
+load(fullfile(WWmeta.rbrpath,['Profiles_' WWmeta.name_rbr]),'RBRprofiles')
 
 
 %get the normal upcast (mean P of the upcast ~ median P of all the mean P)
@@ -55,10 +55,13 @@ RBRgrid.z=zaxis;
 RBRgrid.time=timerbrOK;
 RBRgrid.info=RBRprofiles{1}.info;
 
-if exist([WWmeta.WWpath WWmeta.WW_name '_grid.mat'],'file')
-    load([WWmeta.WWpath WWmeta.WW_name '_grid.mat'],'AQDgrid')
-    save([WWmeta.WWpath WWmeta.WW_name '_grid.mat'],'RBRgrid','AQDgrid')
-else
-    save([WWmeta.WWpath WWmeta.WW_name '_grid.mat'],'RBRgrid')
-end
+save(fullfile(WWmeta.WWpath,[WWmeta.WW_name '_grid.mat']),'RBRgrid')
+
+%% TODO: uncomment and improve when Nortek processing is reading
+% if exist(fullfile([WWmeta.WWpath WWmeta.WW_name '_grid.mat']),'file')
+%     load(fullfile([WWmeta.WWpath WWmeta.WW_name '_grid.mat']),'AQDgrid')
+%     save(fullfile([WWmeta.WWpath WWmeta.WW_name '_grid.mat']),'RBRgrid','AQDgrid')
+% else
+%     save(fullfile([WWmeta.WWpath WWmeta.WW_name '_grid.mat']),'RBRgrid')
+% end
 

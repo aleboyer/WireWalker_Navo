@@ -6,7 +6,7 @@
 
 
 load('Meta_mission.mat','WWmeta');
-load([WWmeta.WWpath WWmeta.WW_name '_grid.mat'],'RBRgrid')
+load(fullfile(WWmeta.WWpath,[WWmeta.WW_name '_grid.mat']),'RBRgrid')
 
 RBRgrid.info
 disp('Choose a field to plot (Depth-time grid)')

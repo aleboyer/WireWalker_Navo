@@ -18,13 +18,13 @@ addpath(fullfile(cd,'Toolbox/seawater'))
 
 %% USER PART (define by user)
 
-WWmeta.rbrpath='/Users/drew/Google Drive/NAVO/NAVO_SIO_training/rbr/'; % path for raw WW data
-WWmeta.aqdpath='/Users/drew/Google Drive/NAVO/NAVO_SIO_training/aqd/'; % path for raw Nortek Signature data
+WWmeta.rbrpath='../NAVO/WW/NAVO/d3/rbr/'; % path for raw WW data
+WWmeta.aqdpath='../NAVO/WW/NAVO/d3/aqd/'; % path for raw Nortek Signature data
 WWmeta.name_rbr='NAVO_rbr'; % Name of the rbr
 WWmeta.name_aqd='NAVO_aqd'; % Name of the Nortek Signature
-WWmeta.root_script='/Users/drew/Google Drive/WireWalker1-master/'; % root
-WWmeta.WWpath='/Users/drew/Google Drive/NAVO/NAVO_SIO_training/L1/'; %path to the processed data
-WWmeta.WW_name='NAVO1'; % "name" of the Wirewalker (use NAVO1 and NAVO2)
+WWmeta.root_script='./'; % root
+WWmeta.WWpath='../NAVO/WW/NAVO/d3/L1/'; %path to the processed data
+WWmeta.WW_name='NAVO'; % "name" of the Wirewalker (use NAVO1 and NAVO2)
 WWmeta %display what has been entered
 
 save([WWmeta.root_script 'Meta_mission.mat'],'WWmeta');
@@ -39,13 +39,17 @@ create_grid_rbr(WWmeta) % grid the Wirewalker data to a depth and time grid.
 %... Depth bins are 0.25 m by default. Time is the center time point of each profile. 
 %...Note that this means that time is NOT even spaced in this approach to gridding.
 
+% check plots
+plot_rbr_raw
+plot_rbr_gridded_data
+
 %% process aqd
 
 % SIO is still working on this. We will improve these scripts after the
 % first test. Please allow SIO to process current meter data.
 
-% process_aqd_2G(WWmeta)
-% create_profiles_aqd_2G(WWmeta)
-% create_grid_aqd_2G(WWmeta)
+ %process_aqd_2G(WWmeta)
+ %create_profiles_aqd_2G(WWmeta)
+ %create_grid_aqd_2G(WWmeta)
 % 
 % 

@@ -2,11 +2,11 @@ function process_rbr(WWmeta)
 
 
 % adding path 
-addpath([WWmeta.root_script 'Toolbox']);
-addpath([WWmeta.root_script 'Toolbox/rsktools']);
-addpath([WWmeta.root_script 'Toolbox/gsw_matlab_v3_02']);
-addpath([WWmeta.root_script 'Toolbox/gsw_matlab_v3_02/library']);
-addpath([WWmeta.root_script 'Toolbox/position_scripts']);
+addpath(fullfile(WWmeta.root_script,'Toolbox'));
+addpath(fullfile(WWmeta.root_script,'Toolbox','rsktools'));
+addpath(fullfile(WWmeta.root_script,'Toolbox','gsw_matlab_v3_02'));
+addpath(fullfile(WWmeta.root_script,'Toolbox','gsw_matlab_v3_02','library'));
+addpath(fullfile(WWmeta.root_script,'Toolbox','position_scripts'));
 
 
 % used in process_WW should be the name after the folder WW in dirName ;

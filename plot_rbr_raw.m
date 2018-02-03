@@ -1,12 +1,12 @@
 % Created on Tue Jan 16 05:18:27 2018
 % Plot RBR raw data. 
-% Note: It has to be launch from the folder where Meta data structure 
+% Note: It has to be launch from the folder with Meta data structure 
 % from process_navo was saved. default: root_script
 % @author: aleboyer@ucsdu.edu
 
 
 load('Meta_mission.mat','WWmeta');
-load([WWmeta.root_script WWmeta.name_rbr  '.mat'])
+load(fullfile(WWmeta.root_script,[WWmeta.name_rbr  '.mat']))
 
 eval(['Data_struct=' WWmeta.name_rbr]);
 Data_struct.info
