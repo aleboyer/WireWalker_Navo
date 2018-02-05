@@ -6,14 +6,15 @@
 
 
 load('Meta_mission.mat','WWmeta');
-load(fullfile(WWmeta.root_script,[WWmeta.name_rbr  '.mat']))
+load(fullfile(WWmeta.rbrpath,[WWmeta.name_rbr  '.mat']))
 
 eval(['Data_struct=' WWmeta.name_rbr]);
-Data_struct.info
 
 disp('Choose a field to plot (time serie)')
 disp('####')
 disp(fields(Data_struct).')
+disp('info:')
+Data_struct.info
 F=input('Field:','s');
 
 figure;
