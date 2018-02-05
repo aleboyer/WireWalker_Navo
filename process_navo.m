@@ -27,7 +27,7 @@ WWmeta.WWpath='../NAVO/WW/NAVO/d3/L1/'; %path to the processed data
 WWmeta.WW_name='NAVO'; % "name" of the Wirewalker (use NAVO1 and NAVO2)
 WWmeta %display what has been entered
 
-save([WWmeta.root_script 'Meta_mission.mat'],'WWmeta');
+save(fullfile(WWmeta.root_script, 'Meta_mission.mat'),'WWmeta');
 
 cd(WWmeta.root_script) %change directory to the location...
 

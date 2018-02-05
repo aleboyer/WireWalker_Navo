@@ -43,7 +43,7 @@ else
     RSK.channels = doSelect(RSK, 'SELECT shortName, longName, units FROM channels ORDER by channels.channelID');
 end
 
-RSK = removenonmarinechannels(RSK);
-RSK = renamechannels(RSK);
+RSK = removeNonMarineChannels(RSK);
+RSK = renameChannels(RSK);
 
 end

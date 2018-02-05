@@ -88,7 +88,7 @@ if isempty(results)
 end
 
 
-results = removeunuseddatacolumns(results);
+results = removeUnusedDataColumns(results);
 results = arrangedata(results);
 
 t=results.tstamp';
@@ -96,7 +96,7 @@ results.tstamp = RSKtime2datenum(t);
 RSK = readchannels(RSK);
 
 if ~strcmpi(RSK.dbInfo(end).type, 'EPdesktop')
-    [~, isDerived] = removenonmarinechannels(RSK);
+    [~, isDerived] = removeNonMarineChannels(RSK);
     results.values = results.values(:,~isDerived);
 end
 

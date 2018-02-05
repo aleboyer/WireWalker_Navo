@@ -38,13 +38,13 @@ else
         return
     end
     
-    results = removeunuseddatacolumns(results);
+    results = removeUnusedDataColumns(results);
     results = arrangedata(results);
 
     results.tstamp = RSKtime2datenum(results.tstamp');
     results.ratio = max([temp.ratio]);
     if ~strcmpi(RSK.dbInfo(end).type, 'EPdesktop')
-        [~, isDerived] = removenonmarinechannels(RSK);
+        [~, isDerived] = removeNonMarineChannels(RSK);
         results.values = results.values(:,~isDerived);
     end
 
